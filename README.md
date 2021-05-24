@@ -1,4 +1,4 @@
-# Agg Wizard
+# [Agg Wizard](https://www.elegantbi.com/post/aggwizard "Agg Wizard")
 
 Agg Wizard is a tool that allows you to set customized aggregation tables for a tabular model. This tool runs inside of [Tabular Editor](https://tabulareditor.com/ "Tabular Editor")'s  [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window and is compatible for all incarnations of tabular - [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services"), [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services"), and [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium") (using the [XMLA R/W
 endpoint](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoint")). This aggregations built using this tool are also compatible irrespective of if the base fact table is in Direct Query or Import mode.
