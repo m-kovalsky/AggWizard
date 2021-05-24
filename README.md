@@ -40,6 +40,19 @@ Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://
 
     start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<C:\Desktop\Model.bim>" -D "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Premium Dataset>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>" 
 
+## Limitations
+
+The Agg Wizard tool is compatible with all incarnations of tabular as well as with base fact tables in Direct Query or Import mode. That being said there are several limitations which are noted below.
+
+*  Fact tables (defined as having at least one relationship where it is on the 'from' side).
+*  The partitions of the table must be of 'provider-type' (not using M and not a calculated table).
+*  The partitions of the table must all be in the format of 'SELECT * FROM ...'.
+*  Only foreign keys and hidden 'aggregatable columns' can be used in the agg tables. Degenerate fact columns cannot be used in the aggregate table (and will not show in the Agg Wizard).
+
+## Processing the Agg Tables
+
+The agg tables must be processed as any other Import mode table would be processed. That being said, the Agg Wizard is integrated with the [Processing Manager](https://github.com/m-kovalsky/ProcessingManager "Processing Manager"). This means that if your model is using batch processing with the Processing Manager, the Agg tables (and appropriate partitions) will automatically be added to the same batch(es) as the base fact table. This is an easy way to ensure that your Agg tables are always up to date.
+
 ## Integration Applications
 
 The command line code may be integrated into any application which is able to run command line code. Examples of such applications include [Azure DevOps](https://azure.microsoft.com/services/devops/ "Azure DevOps") and [Azure Data Factory](https://azure.microsoft.com/services/data-factory/ "Azure Data Factory"). Integrating the Processing Manager solution into these applciations will streamline the processing operations of your tabular model(s). In order to use these applications for a Power BI Premium dataset you will need to set up a [Service Principal](https://tabulareditor.com/2020/06/02/PBI-SP-Access.html "Service Principal") and a [Key Vault](https://azure.microsoft.com/services/key-vault/ "Azure Key Vault"). 
