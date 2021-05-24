@@ -24,7 +24,7 @@ After you use the Agg Wizard tool to customize your aggregation tables, you can 
 1. Download the AggWizard_CreateAggs.cs script and save it to your computer.
 2. Run the code below in the command prompt (filling in the \<parameters\>) according to the variety of tabular you are using.
     
-*Note that although it is possible to run this in the command prompt, it is recommended to run the following processing scripts by integrating them into an application as discussed [below](https://github.com/m-kovalsky/ProcessingManager#integration-applications "Integration Applications").*
+***Note that although it is possible to run this in the command prompt, it is recommended to run the following processing scripts by integrating them into an application as discussed [below](https://github.com/m-kovalsky/ProcessingManager#integration-applications "Integration Applications").***
 
 ## [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services")
 
