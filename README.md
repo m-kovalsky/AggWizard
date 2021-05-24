@@ -17,7 +17,7 @@ Make sure to click the 'Save' button within the Agg Wizard tool after making cha
 
 ## Creating the Agg Tables
 
-After you use the Agg Wizard tool to customize your aggregation tables, you can use the following method to deploy your model to a server while simultaneously generating the aggregation tables.
+After you use the Agg Wizard tool to customize your aggregation tables, you can use the following method to deploy your model to a server while simultaneously generating the aggregation tables. It should be noted that the script mentioned below can also be run inside of Tabular Editor. However, I recommend only running the script in Tabular Editor for testing purposes (and not saving the changes).
 
 1. Download the AggWizard_CreateAggs.cs script and save it to your computer.
 2. Run the code below in the command prompt (filling in the \<parameters\>) according to the variety of tabular you are using.
@@ -26,18 +26,23 @@ After you use the Agg Wizard tool to customize your aggregation tables, you can 
 
 ## [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services")
 
-    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "C:\Desktop\Model.bim" -D "<Server Name>" "<Database Name>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>"
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<C:\Desktop\Model.bim>" -D "<Server Name>" "<Database Name>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>"
 
 ## [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services")
 
-    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "C:\Desktop\Model.bim" -D "Provider=MSOLAP;Data Source=asazure://<AAS Region>.asazure.windows.net/<AAS Server Name>;User ID=<xxxxx>;Password=<xxxxx>;Persist Security Info=True;Impersonation Level=Impersonate" "<Database Name>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>"
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<C:\Desktop\Model.bim>" -D "Provider=MSOLAP;Data Source=asazure://<AAS Region>.asazure.windows.net/<AAS Server Name>;User ID=<xxxxx>;Password=<xxxxx>;Persist Security Info=True;Impersonation Level=Impersonate" "<Database Name>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>"
 
 ## [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium")
 
 Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoints") for your Premium Workspace. An additional requirement is setting up a [Service Principal](https://tabulareditor.com/2020/06/02/PBI-SP-Access.html "Setting up a Service Principal").
 
-    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "C:\Desktop\Model.bim" -D "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Premium Dataset>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>" 
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<C:\Desktop\Model.bim>" -D "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Premium Dataset>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>" 
 
+## Integration Applications
+
+The command line code may be integrated into any application which is able to run command line code. Examples of such applications include [Azure DevOps](https://azure.microsoft.com/services/devops/ "Azure DevOps") and [Azure Data Factory](https://azure.microsoft.com/services/data-factory/ "Azure Data Factory"). Integrating the Processing Manager solution into these applciations will streamline the processing operations of your tabular model(s). In order to use these applications for a Power BI Premium dataset you will need to set up a [Service Principal](https://tabulareditor.com/2020/06/02/PBI-SP-Access.html "Service Principal") and a [Key Vault](https://azure.microsoft.com/services/key-vault/ "Azure Key Vault"). 
+
+Make sure to read my [blog post](https://www.elegantbi.com/post/processingmanager "Processing Manager") for more information on configuring Tabular Editor scripts to run within [Azure DevOps](https://azure.microsoft.com/services/devops/ "Azure DevOps"). 
 
 ## Requirements
 
