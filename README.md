@@ -15,6 +15,8 @@ Make sure to click the 'Save' button within the Agg Wizard tool after making cha
 
 *Note: For easier access, it is recommended to save the script as a [Custom Action](https://docs.tabulareditor.com/Custom-Actions.html "Custom Action").*
 
+<img width="265" alt="Image1" src="https://user-images.githubusercontent.com/29556918/119328097-6ae88a00-bc8c-11eb-99d3-725e730cdaf7.png">
+
 ## Creating the Agg Tables
 
 After you use the Agg Wizard tool to customize your aggregation tables, you can use the following method to deploy your model to a server while simultaneously generating the aggregation tables. It should be noted that the script mentioned below can also be run inside of Tabular Editor. However, I recommend only running the script in Tabular Editor for testing purposes (and not saving the changes).
