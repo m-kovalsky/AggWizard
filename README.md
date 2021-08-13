@@ -45,7 +45,7 @@ Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://
 The Agg Wizard tool is compatible with all incarnations of tabular as well as with base fact tables in Direct Query or Import mode. That being said there are several limitations which are noted below.
 
 *  Fact tables (defined as having at least one relationship where it is on the 'from' side).
-*  The partitions of the table must be of 'provider-type' (not using M and not a calculated table).
+*  The partitions of the table must be of ['provider-type'](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-datasource#understanding-providers) (not using M and not a calculated table).
 *  The partitions of the table must all be in the format of 'SELECT * FROM ...'.
 *  Only foreign keys and hidden 'aggregatable columns' can be used in the agg tables. Degenerate fact columns cannot be used in the aggregate table (and will not show in the Agg Wizard).
 
