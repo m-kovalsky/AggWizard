@@ -44,14 +44,14 @@ Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://
 
 The Agg Wizard tool is compatible with all incarnations of tabular as well as with base fact tables in Direct Query or Import mode. That being said there are several limitations which are noted below.
 
-*  Fact tables (defined as having at least one relationship where it is on the 'from' side).
-*  The partitions of the table must be of ['provider-type'](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-datasource#understanding-providers) (not using M and not a calculated table).
-*  The partitions of the table must all be in the format of 'SELECT * FROM ...'.
-*  Only foreign keys and hidden 'aggregatable columns' can be used in the agg tables. Degenerate fact columns cannot be used in the aggregate table (and will not show in the Agg Wizard).
+*  Aggregations may only be created on fact tables (defined as having at least one relationship where it is on the 'from' side).
+*  The partitions of the base fact table must be of '[provider-type](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-datasource#understanding-providers)' (not using M and not a calculated table).
+*  The partitions of the base fact table must all be in the format of 'SELECT * FROM ...'.
+*  Only foreign keys and hidden 'aggregatable columns' can be used in the aggregation tables. Degenerate fact columns cannot be used in the aggregation table (and will not show in the Agg Wizard).
 
 ## Processing the Agg Tables
 
-The agg tables must be processed as any other Import mode table would be processed. That being said, the Agg Wizard is integrated with the [Processing Manager](https://github.com/m-kovalsky/ProcessingManager "Processing Manager"). This means that if your model is using batch processing with the Processing Manager, the Agg tables (and appropriate partitions) will automatically be added to the same batch(es) as the base fact table. This is an easy way to ensure that your Agg tables are always up to date.
+The aggregation tables must be processed as any other Import mode table would be processed. That being said, the Agg Wizard is integrated with the [Processing Manager](https://github.com/m-kovalsky/ProcessingManager "Processing Manager"). This means that if your model is using batch processing with the Processing Manager, the Agg tables (and appropriate partitions) will automatically be added to the same batch(es) as the base fact table. This is an easy way to ensure that your Agg tables are always up to date.
 
 ## Integration Applications
 
