@@ -36,7 +36,7 @@ After you use the Agg Wizard tool to customize your aggregation tables, you can 
 
 ## [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium")
 
-Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoints") for your Premium Workspace. An additional requirement is setting up a [Service Principal](https://tabulareditor.com/2020/06/02/PBI-SP-Access.html "Setting up a Service Principal").
+Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoints") for your Premium Workspace. An additional requirement is setting up a [Service Principal](https://tabulareditor.com/service-principal-access-to-dedicated-capacity-xmla-endpoint/ "Setting up a Service Principal").
 
     start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<C:\Desktop\Model.bim>" -D "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Premium Dataset>" -S "<C# Script File Location (AggWizard_CreateAggs.cs)>" 
 
